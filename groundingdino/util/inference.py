@@ -94,8 +94,10 @@ def predict(
             in logits
         ]
 
-    return boxes, logits.max(dim=1)[0], phrases
-
+    if len(logits) > 0:
+        return boxes, logits.max(dim=1)[0], phrases
+    else:
+        return boxes, logits, phrases
 
 def annotate(image_source: np.ndarray, boxes: torch.Tensor, logits: torch.Tensor, phrases: List[str]) -> np.ndarray:
     h, w, _ = image_source.shape

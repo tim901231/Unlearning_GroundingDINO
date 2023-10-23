@@ -110,6 +110,33 @@ Marrying <a href="https://github.com/IDEA-Research/GroundingDINO">Grounding DINO
 - [x] Grounding DINO with Stable Diffusion and GLIGEN demos.
 - [ ] Release training codes.
 
+## :hammer_and_wrench: Install Debugging
+
+- follow the github set $CUDA_HOME
+- I use which nvcc get /usr/bin/nvcc
+- remove the /bin/nvcc and set the remaining part as path
+
+needs pytorch version follow the version show by nvcc --versoin
+[pytorch version](https://pytorch.org/get-started/previous-versions/)
+
+In my case
+```bash=
+echo 'export CUDA_HOME=/usr' >> ~/.bashrc
+source ~/.bashrc
+echo $CUDA_HOME
+```
+
+#### Error
+AttributeError: module 'torch' has no attribute 'frombuffer'
+
+follow [link](https://github.com/huggingface/transformers/issues/25847)
+
+the version of safetensor use torch 2.0, solved by downgrade transformers == 4.29.2 safetensors == 0.3.0
+
+```bash
+pip install transformers == 4.29.2 safetensors == 0.3.0
+```
+
 ## :hammer_and_wrench: Install 
 
 **Note:**
