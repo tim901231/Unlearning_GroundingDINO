@@ -110,6 +110,19 @@ Marrying <a href="https://github.com/IDEA-Research/GroundingDINO">Grounding DINO
 - [x] Grounding DINO with Stable Diffusion and GLIGEN demos.
 - [ ] Release training codes.
 
+## :star: Cifar10 Classification with GroundingDINO
+```bash
+bash cls.sh -f ../evaluation_folder/classification/cifar10_*/
+```
+the result csv in 
+```
+../evaluation_folder/classification/cifar10_*/annotation
+```
+aggregate results with
+```bash
+cd ..
+python eval-script/classification/classification.py --folder_path evaluation_folder/classification/cifatr10_*/annotation
+```
 ## :hammer_and_wrench: Install Debugging
 
 - follow the github set $CUDA_HOME

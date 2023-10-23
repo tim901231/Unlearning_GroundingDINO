@@ -28,7 +28,7 @@ if __name__ == '__main__':
     TEXT_TRESHOLD = 0.25
 
     prompt = pd.read_csv(prompt_path)
-    print(prompt)
+    # print(prompt)
     # print(sorted(os.listdir(folder_path)))
     T = len(prompt['case_number'])
     pred = []
